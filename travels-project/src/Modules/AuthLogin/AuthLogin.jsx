@@ -1,5 +1,10 @@
-import styles from './AuthLogin.module.css';
-import { Typography } from "@mui/material";
+import styles from "./AuthLogin.module.css";
+import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import Button from "../../Components/Button/Button";
+// import "@fontsource/roboto/300.css";
+import '@fontsource/roboto/700.css';
+import { Typography, CssBaseline } from "@mui/material";
+
 // import {
 //   Grid,
 //   Container,
@@ -17,8 +22,8 @@ import { Typography } from "@mui/material";
 
 const AuthLogin = () => {
   return (
-
-   <div className={styles.containerLogin}>
+    <div className={styles.containerLogin}>
+      <CssBaseline />
       <div className={styles.containerLoginElements}>
         <div className={styles.textCenter}>
           {/* <h1>
@@ -27,49 +32,52 @@ const AuthLogin = () => {
             /></span>
             Note me
           </h1> */}
-          <Typography className={styles.h1} component="h1" variant="h8">
-              <span>
-                <img src="../../../assets/image/Vector (2).png" alt="mundo "
-              /></span>
-              Travels
+          
+         <div className={styles.title}>
+         <Typography className={styles.h1} component="h1" variant="h2">
+            <TravelExploreIcon className={styles.icon} fontSize="extra-large"/>
+            Travels
           </Typography>
-          < Typography className={styles.h3} component="h3" variant="h5">
-            Inicia sesión
-            </Typography>
+         </div>
+
+          <Typography className={styles.h3} component="h3" variant="h4">
+            Nuevos destinos 
+          </Typography>
         </div>
 
-      {/* <div class="text-center">
+        {/* <div class="text-center">
         <h3>Inicia sesión para <br/>recordarlo todo</h3>
       </div> */}
 
         <form className={styles.form}>
-    
-        <label for="idLoginEmail" className={styles.label}
-          >Dirección de correo electrónico</label>
-          <input className={styles.input}
+          <label for="idLoginEmail" className={styles.label}>
+            Dirección de correo electrónico
+          </label>
+          <input
+            className={styles.input}
             id="idLoginEmail"
             type="text"
             placeholder=" Correo electrónico"
             required
             formControlName="email"
           />
-      
-        <label className={styles.label} for="idLoginPassword" 
-          >Contraseña</label>
-          <input className={styles.input}
+
+          <label className={styles.label} for="idLoginPassword">
+            Contraseña
+          </label>
+          <input
+            className={styles.input}
             id="idLoginPassword"
             type="password"
             placeholder=" ********"
             required
             formControlName="password"
           />
-      
 
-        <button className={styles.button}>Ingresar</button>
-      </form>
+          <Button />
+        </form>
       </div>
-   </div> 
-
+    </div>
 
     // <Grid container component="main">
     //   <CssBaseline />
@@ -121,7 +129,7 @@ const AuthLogin = () => {
     //           variant="circular"
     //           color="secondary"
     //           className={styles.button}
-              
+
     //           // onClick={() => onSubmit()}
     //         >
     //           Ingresar
@@ -130,7 +138,7 @@ const AuthLogin = () => {
     //     </div>
     //   </Container>
     // </Grid>
-  )
-}
+  );
+};
 
-export default AuthLogin
+export default AuthLogin;

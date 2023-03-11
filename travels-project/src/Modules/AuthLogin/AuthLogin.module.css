@@ -4,6 +4,7 @@
     padding: 2rem;
     height: 100vh;
     width: 100%;
+    background-color: #1e1e1e;
 }
 
 .containerLoginElements {
@@ -19,8 +20,14 @@
     flex-direction: column;
 }
 
+.title {
+    margin-bottom: 2rem;
+}
+
 .h1 {
    color: #16f8ff;
+  margin-bottom: 5rem;
+
 }
 
 .h3 {
@@ -36,7 +43,9 @@
    text-align: center;
 }
 
-
+.icon {
+  margin-right: 0.6rem;
+}
 
 .label {
  display: flex;
@@ -56,6 +65,9 @@ input {
     margin: 0.7rem 0 0.7rem 0;
     background-color: #1e1e1e;
   }
+
+
+
 /* .container {
     display: flex;
     justify-content: center;
