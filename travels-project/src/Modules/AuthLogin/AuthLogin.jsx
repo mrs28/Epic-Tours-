@@ -1,8 +1,9 @@
+import { useState } from "react";
 import styles from "./AuthLogin.module.css";
-import TravelExploreIcon from '@mui/icons-material/TravelExplore';
+import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import Button from "../../Components/Button/Button";
 // import "@fontsource/roboto/300.css";
-import '@fontsource/roboto/700.css';
+import "@fontsource/roboto/700.css";
 import { Typography, CssBaseline } from "@mui/material";
 
 // import {
@@ -21,35 +22,43 @@ import { Typography, CssBaseline } from "@mui/material";
 // import { useHistory } from "react-router-dom";
 
 const AuthLogin = () => {
+  const [userData, setUserData] = useState({ email: "", password: "" });
+
+  const handleChange = (e) => {
+    setUserData({
+      ...userData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  console.log(userData);
+
+  const handelSubmit = (e)=> {
+    e.preventDefault();
+    
+  }
+
   return (
     <div className={styles.containerLogin}>
       <CssBaseline />
       <div className={styles.containerLoginElements}>
-        <div className={styles.textCenter}>
-          {/* <h1>
-            <span>
-              <img src="../../../assets/image/Vector (2).png" alt="block de notas "
-            /></span>
-            Note me
-          </h1> */}
-          
-         <div className={styles.title}>
-         <Typography className={styles.h1} component="h1" variant="h2">
-            <TravelExploreIcon className={styles.icon} fontSize="extra-large"/>
-            Travels
-          </Typography>
-         </div>
+        <div>
+          <div className={styles.title}>
+            <Typography className={styles.h1} component="h1" variant="h2">
+              <TravelExploreIcon
+                className={styles.icon}
+                fontSize="extra-large"
+              />
+              Travels
+            </Typography>
+          </div>
 
           <Typography className={styles.h3} component="h3" variant="h4">
-            Nuevos destinos 
+            Nuevos destinos
           </Typography>
         </div>
 
-        {/* <div class="text-center">
-        <h3>Inicia sesión para <br/>recordarlo todo</h3>
-      </div> */}
-
-        <form className={styles.form}>
+        <form onSubmit={handelSubmit} className={styles.form}>
           <label for="idLoginEmail" className={styles.label}>
             Dirección de correo electrónico
           </label>
@@ -59,7 +68,8 @@ const AuthLogin = () => {
             type="text"
             placeholder=" Correo electrónico"
             required
-            formControlName="email"
+            name="email"
+            onChange={handleChange}
           />
 
           <label className={styles.label} for="idLoginPassword">
@@ -71,9 +81,9 @@ const AuthLogin = () => {
             type="password"
             placeholder=" ********"
             required
-            formControlName="password"
+            name="password"
+            onChange={handleChange}
           />
-
           <Button />
         </form>
       </div>
